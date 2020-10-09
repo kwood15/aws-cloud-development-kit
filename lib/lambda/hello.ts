@@ -6,6 +6,6 @@ exports.handler = async function (event: AWSLambda.APIGatewayEvent) {
     headers: {
       'Content-Type': 'text/plain',
     },
-    body: "Hello kay",
+    body: `Hello kay, you've hit ${event.path}`
   };
 };
