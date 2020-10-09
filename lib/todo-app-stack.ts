@@ -9,7 +9,9 @@ export class TodoAppStack extends cdk.Stack {
     const helloLambda = new lambda.Function(this, 'HelloLambda', {
       runtime: lambda.Runtime.NODEJS_12_X,
       handler: 'hello.handler',
-      code: lambda.Code.fromAsset(path.join(__dirname, 'lambda'))  
+      code: lambda.Code.fromAsset(path.join(__dirname, 'lambda')),
+      memorySize: 256,
+      timeout: cdk.Duration.seconds(10)
     });
   }
 }
